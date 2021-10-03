@@ -1,3 +1,8 @@
+//main
 loadItems()
-  .then((items) => {})
-  .catch(console.log);
+  .then((items) => {
+    console.log(items);
+    displayItems(items);
+    //setEventListeners(items);
+  })
+  .catch(console.log("error"));

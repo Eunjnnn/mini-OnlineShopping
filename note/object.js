@@ -13,30 +13,30 @@ function print(person) {
   console.log(person.age);
 }
 
-const ellie = { name: "ellie", age: 4 };
-print(ellie);
+const eunjin = { name: "eunjin", age: 4 };
+print(eunjin);
 
 // with JavaScript magic (dynamically typed language)
 // can add properties later
-ellie.hasJob = true;
-console.log(ellie.hasJob);
+eunjin.hasJob = true;
+console.log(eunjin.hasJob);
 
 // can delete properties later
-delete ellie.hasJob;
-console.log(ellie.hasJob);
+delete eunjin.hasJob;
+console.log(eunjin.hasJob);
 
 // 2. Computed properties
 // key should be always string
-console.log(ellie.name);
-console.log(ellie["name"]);
-ellie["hasJob"] = true;
-console.log(ellie.hasJob);
+console.log(eunjin.name);
+console.log(eunjin["name"]);
+eunjin["hasJob"] = true;
+console.log(eunjin.hasJob);
 
 function printValue(obj, key) {
   console.log(obj[key]);
 }
-printValue(ellie, "name");
-printValue(ellie, "age");
+printValue(eunjin, "name");
+printValue(eunjin, "age");
 
 // 3. Property value shorthand
 const person1 = { name: "bob", age: 2 };
@@ -54,14 +54,15 @@ function Person(name, age) {
 }
 
 // 5. in operator: property existence check (key in obj)
-console.log("name" in ellie);
-console.log("age" in ellie);
-console.log("random" in ellie);
-console.log(ellie.random);
+console.log("name" in eunjin);
+console.log("age" in eunjin);
+console.log("random" in eunjin);
+console.log(eunjin.random);
+
 // 6. for..in vs for..of
 // for (key in obj)
 console.clear();
-for (let key in ellie) {
+for (let key in eunjin) {
   console.log(key);
 }
 
@@ -73,7 +74,7 @@ for (let value of array) {
 
 // 7. Fun cloning
 // Object.assign(dest, [obj1, obj2, obj3...])
-const user = { name: "ellie", age: "20" };
+const user = { name: "eunjin", age: "20" };
 const user2 = user;
 console.log(user);
 
@@ -92,5 +93,5 @@ console.log(user4);
 const fruit1 = { color: "red" };
 const fruit2 = { color: "blue", size: "big" };
 const mixed = Object.assign({}, fruit1, fruit2);
-console.log(mixed.color);
-console.log(mixed.size);
+console.log(mixed.color); // blue
+console.log(mixed.size); // big

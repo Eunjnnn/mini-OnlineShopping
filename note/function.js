@@ -11,45 +11,42 @@
 // function is object in JS
 
 function printHello() {
-    console.log('Hello');
+  console.log("Hello");
 }
 printHello();
 
 function log(message) {
-    console.log(message);
+  console.log(message);
 }
-log('Hello')
-
+log("Hello");
 
 // 2. Parameters
 // - premitive parameters: passed by value
 // - object parameters: passed by reference
 
-
 function changeName(obj) {
-    obj.name = 'coder';
+  obj.name = "coder";
 }
-const eunjin = { name: 'eunjin' };
+const eunjin = { name: "eunjin" };
 changeName(eunjin);
 console.log(eunjin);
 
-
 // 3. Default Parameters (added in ES6)
 
-function showMessage(message, from = 'unknown') {
-    console.log(`${message} by ${from}`)
+function showMessage(message, from = "unknown") {
+  console.log(`${message} by ${from}`);
 }
-showMessage('Hi!')
-
+showMessage("Hi!");
 
 // 4. Rest Parameters (added in ES6)
 
-function printAll(...args) {                        // 배열 형태로 받음 
-    for (let i = 0: i < args.length; i++) {
-        console.log(args[i])
-    }
+function printAll(...args) {
+  // 배열 형태로 받음
+  for (let i = 0; i < args.length; i++) {
+    console.log(args[i]);
+  }
 }
-printAll('dream', 'coding', 'eunjin')
+printAll("dream", "coding", "eunjin");
 
 // 5. Local scope
 
@@ -69,52 +66,51 @@ printAll('dream', 'coding', 'eunjin')
 // - a function declaration can be called earlier than it its defined. (hoisted)
 // - a function expression is created when the execution reaches it.
 
-    const print = function () {         // anonymous function
-        conole.log('print');
-    };
-    print()
-    const printAgain = print;
-    printAgain();
-    const sumAgain = sum;
-    console.log(sumAgain(1, 3));
-
+const print = function () {
+  // anonymous function
+  conole.log("print");
+};
+print();
+const printAgain = print;
+printAgain();
+const sumAgain = sum;
+console.log(sumAgain(1, 3));
 
 // 2. Callback function using function expression
-    
-    function randomQuiz(answer, printYes, printNo) {
-        if (answer === 'love you') {
-            printYes();
-        } else {
-            printNo();
-        }
-    }
 
-    // anonymous function
-    const printYes = function () {
-        console.log('yes!');
-    };
+function randomQuiz(answer, printYes, printNo) {
+  if (answer === "love you") {
+    printYes();
+  } else {
+    printNo();
+  }
+}
 
-    // named function
-    // better debugging in debuggers stack traces
-    // recursions
+// anonymous function
+const printYes = function () {
+  console.log("yes!");
+};
 
-    const printNo = function print() {
-        console.log('no!');
-    };
-    randomQuiz('wrong', printYes, printNo);
-    randomQuiz('love you', printYes, printNo);
+// named function
+// better debugging in debuggers stack traces
+// recursions
 
-    //Arrow function
-    // always anonymous
+const printNo = function print() {
+  console.log("no!");
+};
+randomQuiz("wrong", printYes, printNo);
+randomQuiz("love you", printYes, printNo);
 
-    const simplePrint = function () {
-        console.log('simplePrint!');
-    };
+//Arrow function
+// always anonymous
 
-    const simplePrint = () => console.log('simplePrint!');
-    const add = (a, b) => a + b;
-    const simpleMultiply = (a, b) => {
-        //do something more
-        return a + b;
-    };
+const simplePrint = function () {
+  console.log("simplePrint!");
+};
 
+const simplePrint = () => console.log("simplePrint!");
+const add = (a, b) => a + b;
+const simpleMultiply = (a, b) => {
+  //do something more
+  return a + b;
+};
